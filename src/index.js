@@ -1,4 +1,5 @@
 import "./style.scss";
+const { faker } = require('@faker-js/faker');
 
 console.log("Started!");
 
@@ -80,9 +81,7 @@ var optionsOutro = [
   "Yours faithfully...",
   "Yours in announcements,",
 ];
-var optionsName = [
-  "Name Surname"
-];
+var optionsName = generateNames();
 var optionsTitle = [
   "Founder",
   "Head of Studio",
@@ -90,7 +89,10 @@ var optionsTitle = [
   "Chief of Operations",
   "Announcement Maker",
   "Bearer of Bad News",
-  "Bad News Bringer"
+  "Bad News Bringer",
+  "Studio Publicist",
+  "General Manager",
+  "Social Media Manager"
 ];
 
 var options = {
@@ -110,6 +112,14 @@ var options = {
 }
 
 var generated;
+
+function generateNames() {
+  let names = [];
+  for (var i = 0; i < 100; i++) {
+    names.push(faker.name.findName());
+  }
+  return names;
+}
 
 function randomize() {
   var spans = document.querySelectorAll("span");
