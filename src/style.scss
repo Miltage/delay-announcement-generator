@@ -8,6 +8,14 @@ body {
   user-select: none;
 }
 
+#generated {
+  visibility: hidden;
+
+  &.visible {
+    visibility: visible;
+  }
+}
+
 p span {
   cursor: pointer;
   padding: 5px 10px;
