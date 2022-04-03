@@ -115,7 +115,7 @@ var options = {
   "date": optionsDate
 }
 
-var generated, buttons;
+var generated, buttons, logo;
 
 function generateNames() {
   let names = [];
@@ -134,17 +134,43 @@ function generateDates() {
   return dates;
 }
 
+function generateLogo() {
+  var icon = logo.querySelector(".image");
+  var img = logo.querySelector(".image img");
+  var name = logo.querySelector("span");
+  icon.style.borderWidth = (10 + Math.random() * 5) + "px";
+  img.style.padding = (10 * Math.random()) + "px";
+  var index = Math.floor(Math.random() * 41) + 1;
+  console.log(index);
+  img.setAttribute("src", "assets/logos/" + index + ".svg");
+
+  var adjectives = ["happy", "cuddly", "angry", "drunk", "frantic", "adorable", "rare", "ugly", "cute", "sleepy", "dancing"];
+  var nouns = ["dinosaur", "sword", "lobster", "bandit", "goblin", "face", "bread", "toast", "lemon", "table", "hook", "punch", "nose", "potion", "poison", "bear", "monkey", "panda", "ocean", "sunset"];
+  var index1 = Math.floor(Math.random() * adjectives.length);
+  var a = adjectives[index1];
+  var index2 = Math.floor(Math.random() * nouns.length);
+  var b = nouns[index2];
+  var prefix = a + " " + b;
+  var s = ["studios", "games", "entertainment", "media", "interactive"];
+  name.innerHTML = prefix + " " + s[Math.floor(Math.random() * s.length)];
+
+  var colorIndex = parseInt(document.querySelector('body').getAttribute("color-index"));
+  icon.style.backgroundColor = complementary[colorIndex];
+}
+
 function randomize() {
-  var spans = document.querySelectorAll("span");
+  var spans = document.querySelectorAll("p span");
   for (var s of spans) {
     var id = s.getAttribute("id");
     var choices = [...options[id]];
     s.innerHTML = choices[Math.floor(Math.random() * choices.length)];
   }
   randomColor();
+  generateLogo();
 }
 
 var colors = ["#FFD32D", "#F53D6B", "#FF7D52", "#FFC233", "#2DCA72", "#00ACFF", "#9FB4FF", "#F75FDE", "#4FD3C4", "#FC4F4F"];
+var complementary = ["#2d59ff", "#3df5c7", "#52d4ff", "#3370ff", "#ca2d85", "#ff5300", "#ffea9f", "#5ff778", "#d34f5e", "#4ffcfc"];
 function randomColor() {  
   var node = document.querySelector('body');
   var oldIndex = node.getAttribute("color-index");
@@ -161,6 +187,7 @@ function randomColor() {
 window.onload = function () {
   generated = document.getElementById("generated");
   buttons = document.getElementById("buttons");
+  logo = document.getElementById("logo");
   randomize();
   generated.classList.add("visible");
 

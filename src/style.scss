@@ -16,6 +16,39 @@ body {
   }
 }
 
+#logo {
+  float: right;
+  margin-top: -150px;
+  margin-right: 50px;
+  max-width: 200px;
+  line-height: 0;
+  text-align: center;
+  position: relative;
+  text-align: center;
+
+  .image {
+    display: inline-block;
+    border-radius: 50%;
+    border: 10px rgba(255, 255, 255, 0.25) solid;
+    transition: all 0.5s;
+
+    img {
+      width: 80px;
+      height: 80px;
+      display: inline-block;
+      transition: all 0.5s;
+    }
+  }
+
+  span {
+    display: block;
+    margin-top: 20px;
+    text-transform: uppercase;
+    line-height: normal;
+    font-weight: bold;
+  }
+}
+
 #generated {
   visibility: hidden;
   max-width: 1200px;
