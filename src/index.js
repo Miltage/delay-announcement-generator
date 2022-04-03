@@ -166,6 +166,7 @@ function randomize() {
     s.innerHTML = choices[Math.floor(Math.random() * choices.length)];
   }
   randomColor();
+  randomFont();
   generateLogo();
 }
 
@@ -179,9 +180,20 @@ function randomColor() {
   while (oldIndex != null && oldIndex == index)
     index = Math.floor(Math.random() * colors.length);
   var c = colors[index];
-  console.log(c);
   node.style.backgroundColor = c;  
   node.setAttribute("color-index", index);
+}
+
+var fonts = ["'Lato', sans-serif", "'Kanit', sans-serif", "'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif", "'Arvo', serif"];
+function randomFont() {
+  var node = document.querySelector('body');
+  var oldIndex = node.getAttribute("font-index");
+  var index = Math.floor(Math.random() * fonts.length);
+  while (oldIndex != null && oldIndex == index)
+    index = Math.floor(Math.random() * fonts.length);
+  var f = fonts[index];
+  node.style.fontFamily = f;
+  node.setAttribute("font-index", index);
 }
 
 window.onload = function () {
@@ -221,4 +233,5 @@ window.onload = function () {
 
   document.getElementById("randomize").addEventListener("click", randomize);
   document.getElementById("colors").addEventListener("click", randomColor);
+  document.getElementById("fonts").addEventListener("click", randomFont);
 }
