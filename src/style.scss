@@ -30,6 +30,15 @@ body {
     border-radius: 50%;
     border: 10px rgba(255, 255, 255, 0.25) solid;
     transition: all 0.5s;
+    cursor: pointer;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+
+    &:active {
+      transform: scale(0.95);
+    }
 
     img {
       width: 80px;
@@ -47,6 +56,7 @@ body {
     font-weight: bold;
     font-family: 'Bebas Neue';
     font-size: 28px;
+    cursor: pointer;
   }
 }
 

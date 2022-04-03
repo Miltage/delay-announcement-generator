@@ -137,13 +137,14 @@ function generateDates() {
 function generateLogo() {
   var icon = logo.querySelector(".image");
   var img = logo.querySelector(".image img");
-  var name = logo.querySelector("span");
   icon.style.borderWidth = (10 + Math.random() * 5) + "px";
   img.style.padding = (10 * Math.random()) + "px";
   var index = Math.floor(Math.random() * 41) + 1;
   console.log(index);
   img.setAttribute("src", "assets/logos/" + index + ".svg");
+}
 
+function generateStudioName() {
   var adjectives = ["happy", "cuddly", "angry", "drunk", "frantic", "adorable", "rare", "ugly", "cute", "sleepy", "dancing"];
   var nouns = ["dinosaur", "sword", "lobster", "bandit", "goblin", "face", "bread", "toast", "lemon", "table", "hook", "punch", "nose", "potion", "poison", "bear", "monkey", "panda", "ocean", "sunset"];
   var index1 = Math.floor(Math.random() * adjectives.length);
@@ -152,6 +153,7 @@ function generateLogo() {
   var b = nouns[index2];
   var prefix = a + " " + b;
   var s = ["studios", "games", "entertainment", "media", "interactive"];
+  var name = logo.querySelector("span");
   name.innerHTML = prefix + " " + s[Math.floor(Math.random() * s.length)];
 }
 
@@ -165,6 +167,7 @@ function randomize() {
   randomColor();
   randomFont();
   generateLogo();
+  generateStudioName();
 }
 
 var colors = ["#FFD32D", "#F53D6B", "#FF7D52", "#FFC233", "#2DCA72", "#00ACFF", "#9FB4FF", "#F75FDE", "#4FD3C4", "#FC4F4F"];
@@ -234,4 +237,5 @@ window.onload = function () {
   document.getElementById("randomize").addEventListener("click", randomize);
   document.getElementById("colors").addEventListener("click", randomColor);
   document.getElementById("fonts").addEventListener("click", randomFont);
+  document.querySelector("#logo .image").addEventListener("click", generateLogo);
 }
