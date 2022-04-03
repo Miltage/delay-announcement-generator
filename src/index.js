@@ -164,4 +164,6 @@ window.onload = function () {
         buttons.classList.remove("hidden");
       });
   });
+
+  document.getElementById("randomize").addEventListener("click", randomize);
 }
