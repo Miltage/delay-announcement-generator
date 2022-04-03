@@ -153,9 +153,6 @@ function generateLogo() {
   var prefix = a + " " + b;
   var s = ["studios", "games", "entertainment", "media", "interactive"];
   name.innerHTML = prefix + " " + s[Math.floor(Math.random() * s.length)];
-
-  var colorIndex = parseInt(document.querySelector('body').getAttribute("color-index"));
-  icon.style.backgroundColor = complementary[colorIndex];
 }
 
 function randomize() {
@@ -181,7 +178,10 @@ function randomColor() {
     index = Math.floor(Math.random() * colors.length);
   var c = colors[index];
   node.style.backgroundColor = c;  
-  node.setAttribute("color-index", index);
+  node.setAttribute("color-index", index);  
+
+  var icon = logo.querySelector(".image");
+  icon.style.backgroundColor = complementary[index];
 }
 
 var fonts = ["'Lato', sans-serif", "'Kanit', sans-serif", "'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif", "'Arvo', serif"];
