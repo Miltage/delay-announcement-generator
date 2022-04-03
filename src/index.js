@@ -10,37 +10,49 @@ var optionsIntro = [
   "Dear friends,", 
   "Hello everyone,", 
   "To our loyal supporters,",
-  "To whom it may concern,"
+  "To whom it may concern,",
+  "Hey, you!"
 ];
 var optionsLine1 = [
   "We have important news to share with you.", 
   "We have some troubling news to share with you today.", 
   "We have a difficult announcement to make.", 
-  "We come to you today with some unfortunate news."
+  "We come to you today with some unfortunate news.",
+  "We have something important to tell you."
 ];
 var optionsLine2 = [
   "Our product won't make the release window we were initially aiming for.", 
   "Unfortunately, we will not be able to meet the original deadline for our product.",
   "Regrettably, it looks like we're not going to be able to release our game on time.",
-  "With our deadline looming, we've come to the realization that we're not ready yet for a proper launch."
+  "With our deadline looming, we've come to the realization that we're not ready yet for a proper launch.",
+  "It looks like our game is not going to be finished on time.",
+  "We have grossly over-estimated the amount of work required to get our game out the door."
 ];
 var optionsLine3 = [
   "This is why we are delaying our launch date by several months.", 
   "To this end, we have decided to postpone our launch by several months.",
-  "After some consideration, we've made the difficult decision to move our launch date."
+  "After some consideration, we've made the difficult decision to move our launch date.",
+  "We have decided to push back our launch date a little bit.",
+  "We're going to have to rethink our launch plan a little."
 ];
 var optionsLine4 = [
   "This saddens us deeply.",
   "It is with heavy hearts that we bring you this news.",
   "It is with great sadness that we bring you this news today.",
-  "Nobody is saddened more by this news than us, we promise.",
-  "We're just as bummed as you are, believe me."
+  "Nobody is saddened more by this news than us, believe me.",
+  "We're just as bummed as you are, believe me.",
+  "Sucks, I know.",
+  "Please don't @ me.",
+  "We can't believe it either."
 ];
 var optionsLine5 = [
   "Please know that we are doing everything we can to still get the game out in a timely manner.",
   "We are still committed to bringing you the best game possible.",
   "We ask for your patience and understanding while we continue to work on the game.",
-  "We're still incredibly hard at work behind the scenes producing something amazing."
+  "We're still incredibly hard at work behind the scenes producing something amazing for you.",
+  "Please know that we take our promises to our fans very seriously.",
+  "We promise that our developers are getting very little sleep right now.",
+  "We're crunching super hard to get this game to you."
 ];
 var optionsLine6 = [
   "We just need a little more time.",
@@ -51,7 +63,7 @@ var optionsLine6 = [
 var optionsLine7 = [
   "The extra time would afford us the resources needed to release a product that is ",
   "With some extra time we can afford to produce a game that is ",
-  "In delaying the game we can release something that is ",
+  "In delaying the launch we can hope to release something that is ",
   "A few extra weeks would allow us to make something that is ",
   "By postponing our launch we can produce something that is "
 ];
@@ -62,15 +74,22 @@ var optionsLine8 = [
   "better in almost every regard and",
   "playable and ",
   "worth your money and ",
+  "functional and",
+  "feature-complete and"
 ];
 var optionsLine9 = [
   "relatively free of bugs.",
   "frankly, just more awesome.",
   "polished.",
   "actually decent.",
-  "something of which we're proud.",
+  "something we can actually be proud of.",
+  "something we can show our moms.",
   "actually works, lol.",
   "hits 60fps occasionally.",
+  "crashes way less.",
+  "is under 2TB.",
+  "get at least some positive Steam reviews.",
+  "doesn't trigger your anti-virus."
 ];
 var optionsOutro = [
   "Thank you for your understanding.",
@@ -82,6 +101,7 @@ var optionsOutro = [
   "Though let's be honest, what are you gonna do, not buy it?",
   "Yours faithfully...",
   "Yours in announcements,",
+  "Please don't cancel your pre-orders..."
 ];
 var optionsName = generateNames();
 var optionsTitle = [
@@ -127,7 +147,7 @@ function generateNames() {
 
 function generateDates() {
   let dates = [];
-  let options = ["We're currently aiming for ", "Our new planned date of release is ", "Going forward, our new launch date is"];
+  let options = ["We're currently aiming for", "Our new planned date of release is", "Going forward, our new launch date is", "For now, we're going to be shooting for"];
   for (var i = 0; i < 100; i++) {
     dates.push(options[Math.floor(Math.random() * options.length)] + " <b>" + faker.date.future().toLocaleDateString() + "</b>.");
   }
@@ -145,8 +165,8 @@ function generateLogo() {
 }
 
 function generateStudioName() {
-  var adjectives = ["happy", "cuddly", "angry", "drunk", "frantic", "adorable", "rare", "ugly", "cute", "sleepy", "dancing", "classic", "majestic"];
-  var nouns = ["dinosaur", "sword", "lobster", "bandit", "goblin", "face", "bread", "toast", "lemon", "table", "hook", "fox", "trout", "punch", "nose", "potion", "poison", "bear", "monkey", "panda", "ocean", "sunset", "soup", "llama", "valley", "mountain"];
+  var adjectives = ["happy", "cuddly", "angry", "drunk", "frantic", "adorable", "rare", "ugly", "cute", "sleepy", "dancing", "classic", "majestic", "flying", "golden"];
+  var nouns = ["dinosaur", "sword", "lobster", "bandit", "goblin", "face", "bread", "toast", "lemon", "table", "hook", "fox", "camel", "wizard", "trout", "punch", "nose", "potion", "poison", "bear", "monkey", "panda", "ocean", "sunset", "soup", "llama", "valley", "mountain"];
   var index1 = Math.floor(Math.random() * adjectives.length);
   var a = adjectives[index1];
   var index2 = Math.floor(Math.random() * nouns.length);
