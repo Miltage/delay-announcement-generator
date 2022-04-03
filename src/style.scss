@@ -5,6 +5,7 @@ body {
   font-size: 1.3rem;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   user-select: none;
+  transition: all 0.2s;
 
   &.light {
     color: white;

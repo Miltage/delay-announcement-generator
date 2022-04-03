@@ -33,7 +33,8 @@ var optionsLine4 = [
   "This saddens us deeply.",
   "It is with heavy hearts that we bring you this news.",
   "It is with great sadness that we bring you this news today.",
-  "Nobody is saddened more by this news than us, we promise."
+  "Nobody is saddened more by this news than us, we promise.",
+  "We're just as bummed as you are, believe me."
 ];
 var optionsLine5 = [
   "Please know that we are doing everything we can to still get the game out in a timely manner.",
@@ -77,7 +78,7 @@ var optionsOutro = [
   "Until our next delay,",
   "We appreciate your continued support.",
   "We hope this will be the last time we have to say this.",
-  "We know you'll forgive us eventually.",
+  "We hope you can find it within yourselves to forgive us.",
   "Though let's be honest, what are you gonna do, not buy it?",
   "Yours faithfully...",
   "Yours in announcements,",
@@ -132,7 +133,7 @@ function randomize() {
   randomColor();
 }
 
-var colors = ["#FFD32D", "#F53D6B", "#FF7D52", "#FFC233", "#2DCA72", "#00ACFF", "#7047EB", "#F75FDE", "#22577E", "#3A3845", "#4FD3C4", "#FC4F4F"];
+var colors = ["#FFD32D", "#F53D6B", "#FF7D52", "#FFC233", "#2DCA72", "#00ACFF", "#9FB4FF", "#F75FDE", "#4FD3C4", "#FC4F4F"];
 function randomColor() {
   
   var node = document.querySelector('body');
@@ -143,16 +144,7 @@ function randomColor() {
     index = Math.floor(Math.random() * colors.length);
   var c = colors[index];
   console.log(c);
-  node.style.backgroundColor = c;
-  var rgb = node.style.backgroundColor.substring(4, node.style.backgroundColor.length-1)
-         .replace(/ /g, '')
-         .split(',');
-
-  if (parseInt(rgb[0]) + parseInt(rgb[1]) + parseInt(rgb[2]) < 255)
-    node.classList.add("light");
-  else
-    node.classList.remove("light");
-  
+  node.style.backgroundColor = c;  
   node.setAttribute("color-index", index);
 }
 
