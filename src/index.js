@@ -96,6 +96,7 @@ var optionsTitle = [
   "General Manager",
   "Social Media Manager"
 ];
+var optionsDate = generateDates();
 
 var options = {
   "intro": optionsIntro,
@@ -110,7 +111,8 @@ var options = {
   "line9": optionsLine9,
   "outro": optionsOutro,
   "name": optionsName,
-  "title": optionsTitle
+  "title": optionsTitle,
+  "date": optionsDate
 }
 
 var generated, buttons;
@@ -121,6 +123,15 @@ function generateNames() {
     names.push(faker.name.findName());
   }
   return names;
+}
+
+function generateDates() {
+  let dates = [];
+  let options = ["We're currently aiming for ", "Our new planned date of release is ", "Going forward, our new launch date is"];
+  for (var i = 0; i < 100; i++) {
+    dates.push(options[Math.floor(Math.random() * options.length)] + " <b>" + faker.date.future().toLocaleDateString() + "</b>.");
+  }
+  return dates;
 }
 
 function randomize() {
@@ -134,8 +145,7 @@ function randomize() {
 }
 
 var colors = ["#FFD32D", "#F53D6B", "#FF7D52", "#FFC233", "#2DCA72", "#00ACFF", "#9FB4FF", "#F75FDE", "#4FD3C4", "#FC4F4F"];
-function randomColor() {
-  
+function randomColor() {  
   var node = document.querySelector('body');
   var oldIndex = node.getAttribute("color-index");
   
