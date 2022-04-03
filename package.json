@@ -12,6 +12,7 @@
   "author": "Robert Shenton",
   "license": "ISC",
   "dependencies": {
+    "dom-to-image": "^2.6.0",
     "lodash": "^4.17.21"
   },
   "devDependencies": {

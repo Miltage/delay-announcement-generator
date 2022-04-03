@@ -1,4 +1,5 @@
 import "./style.scss";
+import domtoimage from 'dom-to-image';
 const { faker } = require('@faker-js/faker');
 
 console.log("Started!");
@@ -111,7 +112,7 @@ var options = {
   "title": optionsTitle
 }
 
-var generated;
+var generated, buttons;
 
 function generateNames() {
   let names = [];
@@ -132,6 +133,7 @@ function randomize() {
 
 window.onload = function () {
   generated = document.getElementById("generated");
+  buttons = document.getElementById("buttons");
   randomize();
   generated.classList.add("visible");
 
@@ -144,4 +146,22 @@ window.onload = function () {
       this.innerHTML = choices[Math.floor(Math.random() * choices.length)];
     });
   }
+
+  document.getElementById("download").addEventListener("click", function() {
+    var node = document.querySelector('body');
+    buttons.classList.add("hidden");
+
+    domtoimage.toPng(node)
+      .then(function (dataUrl) {
+        var link = document.createElement('a');
+        link.download = 'delay-announcement.png';
+        link.href = dataUrl;
+        link.click();
+        buttons.classList.remove("hidden");
+      })
+      .catch(function (error) {
+        console.error('oops, something went wrong!', error);
+        buttons.classList.remove("hidden");
+      });
+  });
 }
