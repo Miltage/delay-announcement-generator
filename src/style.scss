@@ -5,6 +5,14 @@ body {
   font-size: 1.3rem;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   user-select: none;
+
+  &.light {
+    color: white;
+
+    #buttons img {
+      filter: invert(100%);
+    }
+  }
 }
 
 #generated {
@@ -46,7 +54,7 @@ p span {
 
   .icon-button {
     display: block;
-    float: right;
+    float: left;
     cursor: pointer;
     padding: 5px;
     border-radius: 5px;

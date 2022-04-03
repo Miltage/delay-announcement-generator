@@ -129,6 +129,31 @@ function randomize() {
     var choices = [...options[id]];
     s.innerHTML = choices[Math.floor(Math.random() * choices.length)];
   }
+  randomColor();
+}
+
+var colors = ["#FFD32D", "#F53D6B", "#FF7D52", "#FFC233", "#2DCA72", "#00ACFF", "#7047EB", "#F75FDE", "#22577E", "#3A3845", "#4FD3C4", "#FC4F4F"];
+function randomColor() {
+  
+  var node = document.querySelector('body');
+  var oldIndex = node.getAttribute("color-index");
+  
+  var index = Math.floor(Math.random() * colors.length);
+  while (oldIndex != null && oldIndex == index)
+    index = Math.floor(Math.random() * colors.length);
+  var c = colors[index];
+  console.log(c);
+  node.style.backgroundColor = c;
+  var rgb = node.style.backgroundColor.substring(4, node.style.backgroundColor.length-1)
+         .replace(/ /g, '')
+         .split(',');
+
+  if (parseInt(rgb[0]) + parseInt(rgb[1]) + parseInt(rgb[2]) < 255)
+    node.classList.add("light");
+  else
+    node.classList.remove("light");
+  
+  node.setAttribute("color-index", index);
 }
 
 window.onload = function () {
@@ -166,4 +191,5 @@ window.onload = function () {
   });
 
   document.getElementById("randomize").addEventListener("click", randomize);
+  document.getElementById("colors").addEventListener("click", randomColor);
 }
