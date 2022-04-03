@@ -1,7 +1,6 @@
 body {
   margin: 0;
   padding: 2rem 3rem;
-  overflow: hidden;
   background-color: rgb(250, 227, 16);
   font-size: 1.3rem;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
@@ -41,6 +40,10 @@ p span {
 }
 
 #buttons {
+  position: absolute;
+  right: 20px;
+  bottom: 10px;
+
   .icon-button {
     display: block;
     float: right;
