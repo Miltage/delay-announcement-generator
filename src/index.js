@@ -145,8 +145,8 @@ function generateLogo() {
 }
 
 function generateStudioName() {
-  var adjectives = ["happy", "cuddly", "angry", "drunk", "frantic", "adorable", "rare", "ugly", "cute", "sleepy", "dancing"];
-  var nouns = ["dinosaur", "sword", "lobster", "bandit", "goblin", "face", "bread", "toast", "lemon", "table", "hook", "punch", "nose", "potion", "poison", "bear", "monkey", "panda", "ocean", "sunset"];
+  var adjectives = ["happy", "cuddly", "angry", "drunk", "frantic", "adorable", "rare", "ugly", "cute", "sleepy", "dancing", "classic", "majestic"];
+  var nouns = ["dinosaur", "sword", "lobster", "bandit", "goblin", "face", "bread", "toast", "lemon", "table", "hook", "fox", "trout", "punch", "nose", "potion", "poison", "bear", "monkey", "panda", "ocean", "sunset", "soup", "llama", "valley", "mountain"];
   var index1 = Math.floor(Math.random() * adjectives.length);
   var a = adjectives[index1];
   var index2 = Math.floor(Math.random() * nouns.length);
@@ -238,4 +238,5 @@ window.onload = function () {
   document.getElementById("colors").addEventListener("click", randomColor);
   document.getElementById("fonts").addEventListener("click", randomFont);
   document.querySelector("#logo .image").addEventListener("click", generateLogo);
+  document.querySelector("#logo span").addEventListener("click", generateStudioName);
 }

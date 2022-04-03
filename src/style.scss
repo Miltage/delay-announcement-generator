@@ -19,7 +19,7 @@ body {
   float: right;
   margin-top: -130px;
   margin-right: 50px;
-  max-width: 200px;
+  max-width: 250px;
   line-height: 0;
   text-align: center;
   position: relative;
@@ -56,7 +56,17 @@ body {
     font-weight: bold;
     font-family: 'Bebas Neue';
     font-size: 28px;
+    padding: 8px;
+    border-radius: 10px;
     cursor: pointer;
+
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.3);
+    }
+
+    &:active {
+      background-color: rgba(255, 255, 255, 0.53);
+    }
   }
 }
 
