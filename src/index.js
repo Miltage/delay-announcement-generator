@@ -170,9 +170,14 @@ function generateLogo() {
   var img = logo.querySelector(".image img");
   icon.style.borderWidth = (10 + Math.random() * 5) + "px";
   img.style.padding = (10 * Math.random()) + "px";
-  img.style.visibility = "visible";
   var index = Math.floor(Math.random() * 41) + 1;
+
+  var oldIndex = img.getAttribute("logo-index");
+  while (oldIndex != null && index == oldIndex)
+    index = Math.floor(Math.random() * 41) + 1;
+
   img.setAttribute("src", "assets/logos/" + index + ".svg");
+  img.setAttribute("logo-index", index);
 }
 
 function generateStudioName() {
