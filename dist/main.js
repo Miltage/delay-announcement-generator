@@ -14467,7 +14467,9 @@ var optionsLine4 = [
   "We're just as bummed as you are, believe me.",
   "Sucks, I know.",
   "Please don't @ me.",
-  "We can't believe it either."
+  "We can't believe it either.",
+  "We're deeply sorry.",
+  "Not a great look for us, we know."
 ];
 var optionsLine5 = [
   "Please know that we are doing everything we can to still get the game out in a timely manner.",
@@ -14476,20 +14478,25 @@ var optionsLine5 = [
   "We're still incredibly hard at work behind the scenes producing something amazing for you.",
   "Please know that we take our promises to our fans very seriously.",
   "We promise that our developers are getting very little sleep right now.",
-  "We're crunching super hard to get this game to you."
+  "We're crunching super hard to get this game to you.",
+  "We're asking for your understanding and patience in this difficult time."
 ];
 var optionsLine6 = [
   "We just need a little more time.",
   "It's just not ready yet.",
   "We're only asking for a few more weeks.",
-  "Just a month or two should do it."
+  "Just a month or two should do it.",
+  "We're just not quite there yet.",
+  "Unfortunately, these things take time.",
+  "You can't rush art."
 ];
 var optionsLine7 = [
   "The extra time would afford us the resources needed to release a product that is ",
   "With some extra time we can afford to produce a game that is ",
   "In delaying the launch we can hope to release something that is ",
   "A few extra weeks would allow us to make something that is ",
-  "By postponing our launch we can produce something that is "
+  "By postponing our launch we can produce something that is ",
+  "Pushing back our launch date, we are confident that we can give you a product that is "
 ];
 var optionsLine8 = [
   "more complete and",
@@ -14499,7 +14506,8 @@ var optionsLine8 = [
   "playable and ",
   "worth your money and ",
   "functional and",
-  "feature-complete and"
+  "feature-complete and",
+  "a little more polished and"
 ];
 var optionsLine9 = [
   "relatively free of bugs.",
@@ -14512,8 +14520,12 @@ var optionsLine9 = [
   "hits 60fps occasionally.",
   "crashes way less.",
   "is under 2TB.",
-  "get at least some positive Steam reviews.",
-  "doesn't trigger your anti-virus."
+  "gets at least 1 positive Steam review.",
+  "doesn't trigger your anti-virus.",
+  "doesn't cost an arm and a leg.",
+  "won't frustrate the life out of you.",
+  "won't make you hate us.",
+  "doesn't melt your graphics card."
 ];
 var optionsOutro = [
   "Thank you for your understanding.",
@@ -14523,9 +14535,10 @@ var optionsOutro = [
   "We hope this will be the last time we have to say this.",
   "We hope you can find it within yourselves to forgive us.",
   "Though let's be honest, what are you gonna do, not buy it?",
-  "Yours faithfully...",
+  "Yours faithfully,",
   "Yours in announcements,",
-  "Please don't cancel your pre-orders..."
+  "Please don't cancel your pre-orders.",
+  "Who knew making games was like, super hard?"
 ];
 var optionsName = generateNames();
 var optionsTitle = [
@@ -14589,8 +14602,8 @@ function generateLogo() {
 }
 
 function generateStudioName() {
-  var adjectives = ["happy", "cuddly", "angry", "drunk", "frantic", "adorable", "rare", "ugly", "cute", "sleepy", "dancing", "classic", "majestic", "flying", "golden"];
-  var nouns = ["dinosaur", "sword", "lobster", "bandit", "goblin", "face", "bread", "toast", "lemon", "table", "hook", "fox", "camel", "wizard", "trout", "punch", "nose", "potion", "poison", "bear", "monkey", "panda", "ocean", "sunset", "soup", "llama", "valley", "mountain"];
+  var adjectives = ["happy", "cuddly", "angry", "drunk", "frantic", "adorable", "rare", "ugly", "cute", "sleepy", "dancing", "classic", "majestic", "flying", "golden", "wobbly", "grumpy"];
+  var nouns = ["dinosaur", "sword", "lobster", "bandit", "goblin", "face", "bread", "toast", "lemon", "table", "hook", "fox", "camel", "wizard", "trout", "punch", "nose", "potion", "poison", "bear", "monkey", "panda", "ocean", "sunset", "soup", "llama", "valley", "mountain", "raft"];
   var index1 = Math.floor(Math.random() * adjectives.length);
   var a = adjectives[index1];
   var index2 = Math.floor(Math.random() * nouns.length);
