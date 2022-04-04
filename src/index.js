@@ -2,8 +2,6 @@ import "./style.scss";
 import domtoimage from 'dom-to-image';
 const { faker } = require('@faker-js/faker');
 
-console.log("Started!");
-
 var optionsIntro = [
   "To our valued customers,", 
   "Greetings gamers!", 
@@ -172,8 +170,8 @@ function generateLogo() {
   var img = logo.querySelector(".image img");
   icon.style.borderWidth = (10 + Math.random() * 5) + "px";
   img.style.padding = (10 * Math.random()) + "px";
+  img.style.visibility = "visible";
   var index = Math.floor(Math.random() * 41) + 1;
-  console.log(index);
   img.setAttribute("src", "assets/logos/" + index + ".svg");
 }
 
@@ -238,6 +236,14 @@ window.onload = function () {
   logo = document.getElementById("logo");
   randomize();
   generated.classList.add("visible");
+
+  var preload = document.getElementById("preload");
+  
+  for (var i = 0; i < 41; i++) {
+    var img = document.createElement("img");
+    img.setAttribute("src", "assets/logos/" + (i + 1) + ".svg");
+    preload.appendChild(img);
+  }
 
   var spans = document.querySelectorAll("span");
   for (var s of spans) {

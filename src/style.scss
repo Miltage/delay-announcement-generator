@@ -160,6 +160,13 @@ body {
   }
 }
 
+#preload {
+  visibility: hidden;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
+
 #logo {
   float: right;
   margin-top: -130px;
@@ -190,6 +197,7 @@ body {
       height: 80px;
       display: inline-block;
       transition: all 0.5s;
+      visibility: hidden;
     }
   }
 
